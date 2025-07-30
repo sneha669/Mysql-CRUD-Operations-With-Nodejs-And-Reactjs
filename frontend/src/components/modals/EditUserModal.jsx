@@ -34,10 +34,12 @@ function EditUserModal() {
     }
     try {
       //put req to server
-      const res = await axios.put(`http://localhost:3000`, {
+      const res = await axios.put(`http://localhost:3000/api/contacts`, {
         id,
         name,
         email
+      },  {
+    withCredentials: true
       });
 
       //incase of success
